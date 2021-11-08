@@ -1,10 +1,18 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Home() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Tela de Inicio</Text>
+      <Button
+        title="Favoritos"
+        color="#8257e5"
+        onPress={() => navigation.navigate("Favoritos")}
+      />
     </View>
   );
 }
@@ -19,5 +27,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 26,
     color: "#e9e9e9",
+    marginBottom: 30,
   },
 });
